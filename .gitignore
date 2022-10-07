@@ -104,4 +104,4 @@ dist
 .tern-port
 
 # Typescript Compiled Files
-nect-env.d.ts
+next-env.d.ts
