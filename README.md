@@ -14,3 +14,8 @@ To download and run Xluh locally, follow these steps:
 `npm run dev`
 
 Enjoy!
+
+## Testing API v1
+
+With the app running locally, you can test the api by visiting `localhost:3000/api/v1/get-test-ts` in your browser or running the following command in your terminal:
+`curl localhost:3000/api/v1/get-test-ts`
