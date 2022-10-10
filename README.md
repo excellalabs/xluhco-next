@@ -44,6 +44,8 @@ Running tests on a specific project
 `npx playwright test landing-page.ts --project=chromium`
 
 ## Debugging Tests
+If you're using Visual Studio Code, it's recomeneded to use (this extension](https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright).
+
 Since Playwright runs in Node.js, you can debug it with your debugger of choice e.g. using console.log or inside your IDE or directly in VS Code with the VS Code Extension. Playwright comes with the Playwright Inspector which allows you to step through Playwright API calls, see their debug logs and explore selectors.
 
 Debugging all tests:
