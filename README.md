@@ -15,7 +15,6 @@ To download and run Xluh locally, follow these steps:
 
 ## Testing with Playwright
 
-Command Line
 Running all tests
 
 `npx playwright test`
@@ -44,7 +43,7 @@ Running tests on a specific project
 
 `npx playwright test landing-page.ts --project=chromium`
 
-Debugging Tests
+## Debugging Tests
 Since Playwright runs in Node.js, you can debug it with your debugger of choice e.g. using console.log or inside your IDE or directly in VS Code with the VS Code Extension. Playwright comes with the Playwright Inspector which allows you to step through Playwright API calls, see their debug logs and explore selectors.
 
 Debugging all tests:
