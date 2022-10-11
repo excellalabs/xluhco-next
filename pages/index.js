@@ -24,11 +24,3 @@ export default function Home() {
     </div>
   )
 }
-
-export async function getServerSideProps() {
-  // Fetch data from external API
-  const res = await getLinks();
-  console.log(res);
-  // // Pass data to the page via props
-  return { props: { } }
-}
