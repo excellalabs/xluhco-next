@@ -2,10 +2,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { env } from 'process'
 import styles from '../styles/Home.module.css'
-import {createNewLink} from '../lib/db'
+import {getLinks} from '../lib/db'
 
 export default function Home() {
-  createNewLink('Test12343', 'https://www.google.com');
+
   return (
     <div className={styles.container}>
       <Head>
@@ -23,4 +23,12 @@ export default function Home() {
 
     </div>
   )
+}
+
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const res = await getLinks();
+  console.log(res);
+  // // Pass data to the page via props
+  return { props: { } }
 }
