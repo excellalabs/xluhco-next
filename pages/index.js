@@ -5,7 +5,6 @@ import styles from '../styles/Home.module.css'
 import {getLinks} from '../lib/db'
 
 export default function Home() {
-
   return (
     <div className={styles.container}>
       <Head>
@@ -19,8 +18,6 @@ export default function Home() {
           Welcome to the xluh.co url shortener
         </h1>
       </main>
-
-
     </div>
   )
 }
