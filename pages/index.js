@@ -16,7 +16,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to the xluh.co url shortener { process.env.AZURE_TABLES_ENDPOINT}
+          Welcome to the xluh.co url shortener
         </h1>
       </main>
 
