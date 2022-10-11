@@ -10,10 +10,7 @@
     "test:e2e": "playwright test"
   },
   "dependencies": {
-    "@azure/core-auth": "^1.4.0",
     "@azure/data-tables": "^13.2.0",
-    "@azure/identity": "^3.0.0",
-    "@azure/storage-blob": "^12.11.0",
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
