@@ -105,3 +105,10 @@ dist
 
 # Typescript Compiled Files
 next-env.d.ts
+
+# Local Environment Variables (See .env.local.sample)
+.env.local
+
+.DS_Store
+
+__azurite_db_table__.json
