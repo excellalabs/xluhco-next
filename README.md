@@ -64,4 +64,19 @@ Now you should be able to view your linkUrl, userId and other data associated wi
 
 #### Other API Notes
 
+- The DELETE API consumes a JSON object like this (the value needs to match the link you want to delete):
+```
+{
+  "shortId": "ag4LVSU7v"
+}
+```
+
+- The PUT API consumes a JSON object like this ():
+```
+{
+  "shortId": "DWDZcOCHs",
+  "linkUrl": "https://notexcella.com"
+}
+```
+
 ## Enjoy!
