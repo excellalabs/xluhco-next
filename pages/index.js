@@ -2,8 +2,16 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { env } from 'process'
 import styles from '../styles/Home.module.css'
+import {getLinks} from '../lib/db'
 
-export default function Home() {
+export async function getServerSideProps(context) {
+  const linksList = await getLinks();
+  return {
+    props: { linksList }, // will be passed to the page component as props
+  }
+}
+
+function Home() {
   return (
     <div className={styles.container}>
       <Head>
@@ -20,3 +28,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home
