@@ -106,8 +106,10 @@ dist
 # Local Environment Variables (See .env.local.sample)
 .env.local
 
+# This came from playwright
+.history
+package-lock.json
+
 .DS_Store
 
 __azurite_db_table__.json
-
-.history/*
