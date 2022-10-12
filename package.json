@@ -17,6 +17,8 @@
     "shortid": "^2.2.16"
   },
   "devDependencies": {
+    "@types/node": "18.8.3",
+    "@types/react": "18.0.21",
     "eslint": "8.24.0",
     "eslint-config-next": "12.3.1"
   }
