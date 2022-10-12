@@ -103,6 +103,9 @@ dist
 # TernJS port file
 .tern-port
 
+# Typescript Compiled Files
+next-env.d.ts
+
 # Local Environment Variables (See .env.local.sample)
 .env.local
 

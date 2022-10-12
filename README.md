@@ -34,6 +34,13 @@ Need to start `azurite table service` from VSCode command pallette
 
 ### For Testing the API
 
+#### Simple API Test
+
+With the app running locally, you can test the api by visiting `localhost:3000/api/v1/get-test-ts` in your browser or running the following command in your terminal:
+`curl localhost:3000/api/v1/get-test-ts`
+
+#### CRUD API Test
+
 If you're using [Postman](https://www.postman.com/), you can test the API there. With Visual Studio Code, it's recomended to use [Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client) extension to test API. The following instructions are how to make a simple create link API call using VSCode and Thunder Client:
 
 - Update your node packages with `npm install`
