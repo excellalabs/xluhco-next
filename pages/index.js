@@ -3,6 +3,7 @@ import { env } from 'process'
 import {getLinks} from '../lib/db'
 import LinksList from '../components/LinksList'
 import UrlForm from '../components/UrlForm'
+import Header from '../components/Header'
 
 
 
@@ -18,9 +19,7 @@ function Home({linksList}) {
       <div className="container">
 
         <main className="row py-5">
-          <h1>
-            Xluh.co URL Shortener
-          </h1>
+          <Header />
           <UrlForm />
           <LinksList links={linksList}/>
         </main>
