@@ -102,12 +102,10 @@ dist
 
 # TernJS port file
 .tern-port
-<<<<<<< HEAD
 /test-results/
 /playwright-report/
 /playwright/.cache/
 .history
-=======
 
 # Typescript Compiled Files
 next-env.d.ts
@@ -118,4 +116,5 @@ next-env.d.ts
 .DS_Store
 
 __azurite_db_table__.json
->>>>>>> main
+__azurite_db_blob_extent__.json
+__azurite_db_blob__.json
