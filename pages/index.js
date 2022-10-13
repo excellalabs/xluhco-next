@@ -14,8 +14,8 @@ function Home({linksList}) {
         <title>Xluh.co</title>
         <meta name="description" content="Xluh.co URL Shortener" />
         <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to the xluh.co url shortener
