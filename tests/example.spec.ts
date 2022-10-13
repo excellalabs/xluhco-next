@@ -19,8 +19,3 @@ test('homepage has Playwright in title and get started link linking to the intro
   await expect(page).toHaveURL(/.*intro/);
 });
 
-test('homepage has a url shortener form', async ({page}) => {
-  await page.goto("http://localhost:3000/");
-
-  await expect(page).toHaveTitle("Xluh.co");
-});
