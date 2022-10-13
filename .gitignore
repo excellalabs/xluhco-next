@@ -102,7 +102,20 @@ dist
 
 # TernJS port file
 .tern-port
+<<<<<<< HEAD
 /test-results/
 /playwright-report/
 /playwright/.cache/
 .history
+=======
+
+# Typescript Compiled Files
+next-env.d.ts
+
+# Local Environment Variables (See .env.local.sample)
+.env.local
+
+.DS_Store
+
+__azurite_db_table__.json
+>>>>>>> main
