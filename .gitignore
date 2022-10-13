@@ -116,3 +116,6 @@ package-lock.json
 .DS_Store
 
 __azurite_db_table__.json
+
+# Don't load Rubymine env files
+.idea
