@@ -1,3 +1,5 @@
+// Use this in the console at (https://xluh.co/list)
+
 const scrapeFromOriginalXhula = () => {
   let theTable = document.getElementsByClassName("list")[0].children;
   let formattedData = [];
