@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { env } from 'process'
 import styles from '../styles/Home.module.css'
-import {getLinks} from '../lib/db'
+import {getLinks, initTable} from '../lib/db'
 import LinksList from '../components/LinksList'
 
 
@@ -27,6 +27,7 @@ function Home({linksList}) {
 }
 
 export async function getStaticProps(context) {
+  await initTable();
   const linksList = await getLinks();
   return {
     props: { linksList }, // will be passed to the page component as props
