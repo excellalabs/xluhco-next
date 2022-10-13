@@ -11,8 +11,8 @@ function Home({linksList}) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>xluh.co</title>
-        <meta name="description" content="xluh.co URL Shortener" />
+        <title>Xluh.co</title>
+        <meta name="description" content="Xluh.co URL Shortener" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
