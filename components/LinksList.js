@@ -1,14 +1,17 @@
 export default function LinksList({links}){
 
   return (
-    <ul>
+    <div>
       {links.map((link, i) => (
-        <li key={i}>
-          <a href={`${process.env.HOST}/${link.shortId}`}>
-            {`${process.env.HOST}/${link.shortId} (${link.url})`}
-          </a>
-        </li>
+        <div className="card" key={i}>
+          <div className="card-body">
+            <p>{link.url}</p>
+            <a class="btn btn-primary" href={`${process.env.HOST}/${link.shortId}`}>
+              {`${process.env.HOST}/${link.shortId}`}
+            </a>
+          </div>
+        </div>
       ))}
-    </ul>
+    </div>
   );
 }

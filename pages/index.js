@@ -1,27 +1,30 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { env } from 'process'
-import styles from '../styles/Home.module.css'
 import {getLinks} from '../lib/db'
 import LinksList from '../components/LinksList'
+import UrlForm from '../components/UrlForm'
 
 
 
 function Home({linksList}) {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Xluh.co</title>
         <meta name="description" content="Xluh.co URL Shortener" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to the xluh.co url shortener
-        </h1>
-        <LinksList links={linksList}/>
-      </main>
+      <div className="container">
+
+        <main className="row py-5">
+          <h1>
+            Xluh.co URL Shortener
+          </h1>
+          <UrlForm />
+          <LinksList links={linksList}/>
+        </main>
+      </div>
     </div>
   )
 }
