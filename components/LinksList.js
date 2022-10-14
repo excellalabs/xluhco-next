@@ -10,7 +10,7 @@ export default function LinksList({links}){
                 <p>{link.url}</p>
               </div>
               <div className="col-5">
-                <a class="fw-lighter float-right" href={`${process.env.HOST}/${link.shortId}`}>
+                <a class="fw-lighter float-end" href={`${process.env.HOST}/${link.shortId}`}>
                   {`${process.env.HOST}/${link.shortId}`}
                 </a>
               </div>
@@ -20,7 +20,7 @@ export default function LinksList({links}){
           <div className="card-footer">
             <p>
               Want to track your links?
-              <a className="btn btn-success float-right">Get Started</a>
+              <a className="btn btn-success float-end">Get Started</a>
             </p>
           </div>
         </div>
