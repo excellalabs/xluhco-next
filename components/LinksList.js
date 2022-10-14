@@ -3,7 +3,7 @@ export default function LinksList({links}){
   return (
     <div>
       {links.map((link, i) => (
-        <div className="card" key={i}>
+        <div className="card my-3" key={i}>
           <div className="card-body">
             <div className="row g-4">
               <div className="col-5">

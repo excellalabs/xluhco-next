@@ -1,7 +1,5 @@
 import Head from 'next/head'
 import { env } from 'process'
-import { getLinks } from '../lib/db'
-import styles from '../styles/Home.module.css'
 import { getLinks, initTable } from '../lib/db'
 import LinksList from '../components/LinksList'
 import UrlForm from '../components/UrlForm'
