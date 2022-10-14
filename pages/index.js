@@ -26,7 +26,7 @@ function Home({linksList}) {
   )
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   await initTable();
   const linksList = await getLinks();
   return {

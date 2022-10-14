@@ -9,9 +9,9 @@ export default function LinksList({links}){
               <div className="col-lg-5">
                 <p>{link.url}</p>
               </div>
-              <div className="col-lg-5">
-                <a class="fw-lighter float-end" href={`${process.env.HOST}/${link.shortId}`}>
-                  {`http://www.xluh.co/${link.shortId}`}
+              <div className="col-5">
+                <a className="fw-lighter float-end" href={`${process.env.HOST}/${link.slug}`}>
+                  {`${process.env.HOST}/${link.slug}`}
                 </a>
               </div>
               <div class="col-lg-2">
