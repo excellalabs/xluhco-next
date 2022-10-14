@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import { env } from 'process'
 import {getLinks} from '../lib/db'
+import styles from '../styles/Home.module.css'
+import {getLinks, initTable} from '../lib/db'
 import LinksList from '../components/LinksList'
 import UrlForm from '../components/UrlForm'
 import Header from '../components/Header'
@@ -29,6 +31,7 @@ function Home({linksList}) {
 }
 
 export async function getStaticProps(context) {
+  await initTable();
   const linksList = await getLinks();
   return {
     props: { linksList }, // will be passed to the page component as props
