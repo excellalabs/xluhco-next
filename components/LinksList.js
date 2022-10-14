@@ -10,11 +10,11 @@ export default function LinksList({links}){
                 <p>{link.url}</p>
               </div>
               <div className="col-5">
-                <a class="fw-lighter float-right" href={`${process.env.HOST}/${link.slug}`}>
+                <a className="fw-lighter float-right" href={`${process.env.HOST}/${link.slug}`}>
                   {`${process.env.HOST}/${link.slug}`}
                 </a>
               </div>
-                <a class="btn btn-primary col-2">Copy</a>
+                <a className="btn btn-primary col-2">Copy</a>
             </div>
           </div>
           <div className="card-footer">
