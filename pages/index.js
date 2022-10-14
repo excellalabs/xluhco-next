@@ -1,32 +1,32 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { env } from 'process'
-import styles from '../styles/Home.module.css'
-import {getLinks, initTable} from '../lib/db'
+import { getLinks, initTable } from '../lib/db'
 import LinksList from '../components/LinksList'
-
-
+import UrlForm from '../components/UrlForm'
+import Header from '../components/Header'
 
 function Home({linksList}) {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Xluh.co</title>
         <meta name="description" content="Xluh.co URL Shortener" />
         <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
+      <div className="container">
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to the xluh.co url shortener
-        </h1>
-        <LinksList links={linksList}/>
-      </main>
+        <main className="row py-5">
+          <Header />
+          <UrlForm />
+          <LinksList links={linksList}/>
+        </main>
+      </div>
     </div>
   )
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   await initTable();
   const linksList = await getLinks();
   return {

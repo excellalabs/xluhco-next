@@ -1,14 +1,34 @@
 export default function LinksList({links}){
 
   return (
-    <ul>
+    <div>
       {links.map((link, i) => (
-        <li key={i}>
-          <a href={`${process.env.HOST}/${link.slug}`}>
-            {`${process.env.HOST}/${link.slug} (${link.url})`}
-          </a>
-        </li>
+        <div className="card my-3" key={i}>
+          <div className="card-body">
+            <div className="row g-4">
+              <div className="col-lg-5">
+                <p>{link.url}</p>
+              </div>
+              <div className="col-5">
+                <a className="fw-lighter float-end" href={`${process.env.HOST}/${link.slug}`}>
+                  {`${process.env.HOST}/${link.slug}`}
+                </a>
+              </div>
+              <div class="col-lg-2">
+                <a class="btn btn-primary float-end">Copy Link</a>
+              </div>
+            </div>
+          </div>
+          {/* If user is not logged in */}
+          <div className="card-footer">
+            <p>
+              Want to track your links?
+              <a className="btn btn-success float-end">Get Started</a>
+            </p>
+          </div>
+          {/* End if user is not logged in */}
+        </div>
       ))}
-    </ul>
+    </div>
   );
 }
