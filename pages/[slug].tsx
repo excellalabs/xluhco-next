@@ -1,11 +1,8 @@
-import { NextApiRequest, NextApiResponse, NextPage } from "next";
-import { Router } from 'next/router'
 import { getLink } from '../lib/db'
 import Head from "next/head";
 
 export async function getServerSideProps({params}) {
   const urlSlug = params.slug
-
   const link = await getLink(urlSlug);
 
   if (link) {
