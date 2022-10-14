@@ -14,15 +14,19 @@ export default function LinksList({links}){
                   {`http://www.xluh.co/${link.shortId}`}
                 </a>
               </div>
-                <a class="btn btn-primary col-lg-2">Copy</a>
+              <div class="col-lg-2">
+                <a class="btn btn-primary float-end">Copy Link</a>
+              </div>
             </div>
           </div>
+          {/* If user is not logged in */}
           <div className="card-footer">
             <p>
               Want to track your links?
               <a className="btn btn-success float-end">Get Started</a>
             </p>
           </div>
+          {/* End if user is not logged in */}
         </div>
       ))}
     </div>
