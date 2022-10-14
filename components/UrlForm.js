@@ -1,7 +1,7 @@
 export default function UrlForm({links}){
 
   return (
-    <div className="mb-3 py-3">
+    <div>
       <div className="row">
         <div className="col-lg-5 col-md-5 py-3">
           <input type="url" className="form-control" id="exampleFormControlInput1" placeholder="Target URL" />
