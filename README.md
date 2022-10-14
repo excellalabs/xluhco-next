@@ -1,4 +1,5 @@
 # xluhco-next
+
 The next rendition of the xluhco app.
 
 ## Getting Started
@@ -13,7 +14,6 @@ To download and run Xluh locally, follow these steps:
 - Start your server locally:
 `npm run dev`
 
-<<<<<<< HEAD
 ## Testing with Playwright
 
 Running all tests
@@ -45,6 +45,7 @@ Running tests on a specific project
 `npx playwright test landing-page.ts --project=chromium`
 
 ## Debugging Tests
+
 If you're using Visual Studio Code, it's recomeneded to use (this extension](https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright).
 
 Since Playwright runs in Node.js, you can debug it with your debugger of choice e.g. using console.log or inside your IDE or directly in VS Code with the VS Code Extension. Playwright comes with the Playwright Inspector which allows you to step through Playwright API calls, see their debug logs and explore selectors.
@@ -61,8 +62,6 @@ Debugging a test from the line number where the test(.. is defined:
 
 `npx playwright test`
 
-Enjoy!
-=======
 ## Database Setup
 
 This application utilizes [Azure Data Tables](https://azure.microsoft.com/services/table_storage) for record storage. 
@@ -75,14 +74,12 @@ Need to start `azurite table service` from VSCode command pallette
 
 - CMD + SHIFT + P - azurite table service for Start Table Service
 
-### For Testing the API
-
-#### Simple API Test
+## Simple API Test
 
 With the app running locally, you can test the api by visiting `localhost:3000/api/v1/get-test-ts` in your browser or running the following command in your terminal:
 `curl localhost:3000/api/v1/get-test-ts`
 
-#### CRUD API Test
+## CRUD API Test
 
 If you're using [Postman](https://www.postman.com/), you can test the API there. With Visual Studio Code, it's recomended to use [Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client) extension to test API. The following instructions are how to make a simple create link API call using VSCode and Thunder Client:
 
@@ -119,7 +116,7 @@ Now you should be able to view your linkUrl, userId and other data associated wi
 }
 ```
 
-#### Other API Notes
+### Other API Notes
 
 - The DELETE API consumes a JSON object like this (the value needs to match the link you want to delete):
 ```
@@ -136,5 +133,4 @@ Now you should be able to view your linkUrl, userId and other data associated wi
 }
 ```
 
-## Enjoy!
->>>>>>> main
+# Enjoy!
