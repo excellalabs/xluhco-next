@@ -11,7 +11,7 @@ export default function LinksList({links}){
               </div>
               <div className="col-5">
                 <a className="card-subtitle mb-2 text-muted float-end" target="_blank" href={`/${link.slug}`}>
-                  {`http://xluh.co/${link.slug}`}
+                  {`${process.env.HOST}/${link.slug}`}
                 </a>
               </div>
               <div class="col-lg-2">
