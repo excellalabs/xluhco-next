@@ -12,7 +12,7 @@ export default function UrlForm({links}){
               <label for="inputPassword6" className="col-form-label">http://{process.env.HOST}/</label>
             </div>
             <div className="col-auto">
-              <input type="userDesiredShortUrl" id="userDesiredShortUrl" className="form-control" aria-describedby="userDesiredShortUrl" />
+              <input type="userDesiredShortUrl" id="userDesiredShortUrl" className="form-control w-auto" aria-describedby="userDesiredShortUrl" />
             </div>
           </div>
         </div>
