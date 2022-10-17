@@ -14,8 +14,8 @@ export default function LinksList({links}){
                   {`${process.env.HOST}/${link.slug}`}
                 </a>
               </div>
-              <div class="col-lg-2">
-                <a class="btn btn-primary float-end">Copy Link</a>
+              <div className="col-lg-2">
+                <a className="btn btn-primary float-end">Copy Link</a>
               </div>
             </div>
           </div>
