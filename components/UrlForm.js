@@ -9,7 +9,7 @@ export default function UrlForm({links}){
         <div className="col-lg-5 col-md py-3">
           <div className="row g-3 align-items-center">
             <div className="col-auto">
-              <label for="inputPassword6" className="col-form-label">http://www.xluh.co/</label>
+              <label for="inputPassword6" className="col-form-label">http://{process.env.HOST}/</label>
             </div>
             <div className="col-auto">
               <input type="userDesiredShortUrl" id="userDesiredShortUrl" className="form-control" aria-describedby="userDesiredShortUrl" />
