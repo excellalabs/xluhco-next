@@ -29,9 +29,11 @@ export default function LinksList({links}){
           <div className="list-group-item">
             <a className="btn btn-success float-end mt-3" href="https://console.jumpcloud.com/login/" target="_blank">Get Started</a>
             <h5 className="mt-3">Want to track your links?</h5>
-            <small>
-              To save your links and to view analytics, sign in using <a href="https://console.jumpcloud.com/login/" target="_blank">JumpCloud</a>.
-            </small>
+            <div className="mb-3">
+              <small>
+                To save your links and to view analytics, sign in using <a href="https://console.jumpcloud.com/login/" target="_blank">JumpCloud</a>.
+              </small>
+            </div>
           </div>
           {/* End if user is not logged in */}
         </ul>
