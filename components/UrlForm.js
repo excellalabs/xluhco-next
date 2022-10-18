@@ -2,18 +2,19 @@ export default function UrlForm({links}){
 
   return (
     <div>
-      <form action="/api/update-link" method="post">
+      <form action="/api/create-link" method="post">
         <div className="row">
           <div className="col-lg-5 col-md-5 py-3">
-            <input htmlFor="redirectLink" type="url" className="form-control" id="exampleFormControlInput1" placeholder="Target URL" />
+            <label htmlFor="linkUrl"></label>
+            <input htmlFor="linkUrl" type="url" className="form-control" id="linkUrl" name="linkUrl" placeholder="Target URL" />
           </div>
           <div className="col-lg-5 col-md py-3">
             <div className="row g-3 align-items-center">
               <div className="col-auto">
-                <label htmlFor="userDesiredShortUrl" className="col-form-label">http://{process.env.HOST}/</label>
+                <label htmlFor="slug" className="col-form-label">http://{process.env.HOST}/</label>
               </div>
               <div className="col-auto">
-                <input htmlFor="userDesiredShortUrl" type="userDesiredShortUrl" id="userDesiredShortUrl" className="form-control w-auto" aria-describedby="userDesiredShortUrl" />
+                <input htmlFor="slug" type="text" name="slug" id="slug" className="form-control w-auto" aria-describedby="slug" />
               </div>
             </div>
           </div>
