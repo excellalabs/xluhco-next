@@ -8,19 +8,18 @@ export default function LinksList({links}){
             <div className="list-group-item" key={i}>
                 <div className="py-3 w-100 justify-content-between">
                   <div className="row">
-                    <div className="col">
+                    <div className="col-md-5 col-sm-12 text-center text-md-start my-2">
                       <h5 className="mb-1">{link.url}</h5>
                     </div>
-                    <div className="col">
+                    <div className="col-md-5 col-sm-12 text-center text-md-end my-2">
                       <small>
-                        <a className="card-subtitle mb-2 text-muted float-end" target="_blank" href={`/${link.slug}`}>
+                        <a className="card-subtitle mb-2 text-muted py-2" target="_blank" href={`/${link.slug}`}>
                           {`${process.env.HOST}/${link.slug}`}
                         </a>
                       </small>
                     </div>
-                    <div className="col">
-
-                      <a className="btn btn-primary float-end">Copy Link</a>
+                    <div className="col-md-2 col-sm-12 text-center d-grid my-2">
+                      <a className="btn btn-secondary float-end">Copy</a>
                     </div>
                   </div>
                 </div>
