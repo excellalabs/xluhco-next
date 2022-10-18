@@ -2,23 +2,23 @@ export default function LinksList({links}){
 
   return (
     <div>
-      <div class="card">
+      <div className="card">
         <ul className="list-group list-group-flush">
           {links.map((link, i) => (
             <div className="list-group-item" key={i}>
                 <div className="py-3 w-100 justify-content-between">
-                  <div class="row">
-                    <div class="col">
+                  <div className="row">
+                    <div className="col">
                       <h5 className="mb-1">{link.url}</h5>
                     </div>
-                    <div class="col">
+                    <div className="col">
                       <small>
                         <a className="card-subtitle mb-2 text-muted float-end" target="_blank" href={`/${link.slug}`}>
                           {`${process.env.HOST}/${link.slug}`}
                         </a>
                       </small>
                     </div>
-                    <div class="col">
+                    <div className="col">
 
                       <a className="btn btn-primary float-end">Copy Link</a>
                     </div>
