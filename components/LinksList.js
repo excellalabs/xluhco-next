@@ -19,7 +19,10 @@ export default function LinksList({links}){
                       </small>
                     </div>
                     <div className="col-md-2 col-sm-12 text-center d-grid my-2">
-                      <a className="btn btn-secondary float-end">Copy</a>
+                      <a className="btn btn-secondary float-end"
+                          onClick={() => navigator.clipboard.writeText(`${process.env.HOST}/${link.slug}`)}>
+                        Copy
+                      </a>
                     </div>
                   </div>
                 </div>
