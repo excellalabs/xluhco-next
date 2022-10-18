@@ -5,7 +5,6 @@ export default function UrlForm({links}){
       <form action="/api/create-link" method="post">
         <div className="row">
           <div className="col-lg-5 col-md-5 py-3">
-            <label htmlFor="linkUrl"></label>
             <input htmlFor="linkUrl" type="url" className="form-control" id="linkUrl" name="linkUrl" placeholder="Target URL" />
           </div>
           <div className="col-lg-5 col-md py-3">
