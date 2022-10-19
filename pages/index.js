@@ -1,11 +1,12 @@
-import Head from 'next/head'
-import { env } from 'process'
-import { getLinks, initTable } from '../lib/db'
-import LinksList from '../components/LinksList'
-import UrlForm from '../components/UrlForm'
-import Header from '../components/Header'
+import Head from 'next/head';
+import { env } from 'process';
+import { getLinks, initTable } from '../lib/db';
+import LinksList from '../components/LinksList';
+import UrlForm from '../components/UrlForm';
+import Header from '../components/Header';
+import { useState } from 'react';
 
-function Home({linksList}) {
+export default function Home({linksList}) {
   return (
     <div>
       <Head>
@@ -33,5 +34,3 @@ export async function getStaticProps() {
     props: { linksList }, // will be passed to the page component as props
   }
 }
-
-export default Home

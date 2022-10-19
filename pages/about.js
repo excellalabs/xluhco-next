@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function About(){
   return (
     <div className="container">
@@ -6,7 +8,9 @@ export default function About(){
           <h1>About Xhula.co</h1>
           <p>Xluh is a tool for Excellians to make sharing URLs easier.</p>
           <p>Have fun!</p>
-          <a href="/" className="btn btn-primary">Explore</a>
+          <Link href="/">
+            <a className="btn btn-primary">Explore</a>
+          </Link>
         </div>
       </div>
 
