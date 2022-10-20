@@ -7,11 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-<<<<<<< HEAD
-    "cucumber": "cucumber --publish-quiet"
-=======
+    "cucumber": "cucumber --publish-quiet",
     "test": "playwright test"
->>>>>>> main
   },
   "dependencies": {
     "@azure/data-tables": "^13.2.0",
@@ -25,11 +22,8 @@
     "react-universal-flash": "^1.0.18"
   },
   "devDependencies": {
-<<<<<<< HEAD
     "@cucumber/cucumber": "^8.6.0",
-=======
     "@playwright/test": "^1.27.0",
->>>>>>> main
     "@types/node": "18.8.3",
     "@types/react": "18.0.21",
     "eslint": "8.24.0",
