@@ -102,6 +102,10 @@ dist
 
 # TernJS port file
 .tern-port
+/test-results/
+/playwright-report/
+/playwright/.cache/
+.history
 
 # Typescript Compiled Files
 next-env.d.ts
@@ -116,6 +120,9 @@ package-lock.json
 .DS_Store
 
 __azurite_db_table__.json
+__azurite_db_blob_extent__.json
+__azurite_db_blob__.json
 
+.vscode
 # Don't load Rubymine env files
 .idea

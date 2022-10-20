@@ -1,22 +1,37 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { env } from 'process'
-import styles from '../styles/Home.module.css'
+import { getLinks, initTable } from '../lib/db'
+import LinksList from '../components/LinksList'
 
-export default function Home() {
+import Header from '../components/Header'
+import {Flasher} from "react-universal-flash";
+
+export default function Home({linksList}) {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
-        <title>xluh.co</title>
-        <meta name="description" content="xluh.co URL Shortener" />
+        <title>Xluh.co</title>
+        <meta name="description" content="Xluh.co URL Shortener" />
         <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
+      <Flasher position="top_center"/>
+      <div className="container">
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to the xluh.co url shortener
-        </h1>
-      </main>
+        <main className="row py-5">
+          <Header />
+
+          <LinksList initialLinks={linksList}/>
+        </main>
+      </div>
     </div>
   )
+}
+
+export async function getServerSideProps() {
+  await initTable();
+  const linksList = await getLinks();
+  return {
+    props: { linksList }, // will be passed to the page component as props
+  }
 }
