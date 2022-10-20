@@ -14,14 +14,12 @@ To download and run Xluh locally, follow these steps:
 - Start your server locally:
 `npm run dev`
 
-<<<<<<< HEAD
+## Running the Cucumber Tests
 
-## Running the Testing Environment
-
-Acceptance tests with cucumber.
+Acceptance tests with cucumber:
 
 `cucumber`
-=======
+
 ## Testing with Playwright
 
 Running all tests
@@ -69,7 +67,6 @@ Debugging one test file:
 Debugging a test from the line number where the test(.. is defined:
 
 `npx playwright test`
->>>>>>> main
 
 ## Database Setup
 
