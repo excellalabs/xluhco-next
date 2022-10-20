@@ -1,7 +1,18 @@
-export default function LinksList({links}){
+import { useState } from 'react'
+import UrlForm from '../components/UrlForm'
+
+export default function LinksList({initialLinks}){
+  const [links, setLinks] = useState(initialLinks)
+
+  const fetchLinks = async () => {
+    const response = await fetch('api/links')
+    const data = await response.json()
+    setLinks(data)
+  }
 
   return (
     <div>
+      <UrlForm onCreate={fetchLinks} />
       <div className="card">
         <ul className="list-group list-group-flush">
           {links.map((link, i) => (

@@ -1,11 +1,35 @@
-export default function UrlForm({links}){
+import {useRef} from 'react';
 
+export default function UrlForm({links, onCreate = f => f}){
+  const linkUrl = useRef();
+  const linkSlug = useRef();
+
+  const addLink = async function(newLinkUrl, newLinkSlug) {
+    const response = await fetch('api/links', {
+      method: 'POST',
+      body: JSON.stringify({linkUrl: newLinkUrl, slug: newLinkSlug}),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    console.log(response)
+    await onCreate();
+  }
+
+  const submit = e => {
+    e.preventDefault();
+    const newLinkUrl = linkUrl.current.value;
+    const newLinkSlug = linkSlug.current.value;
+    //const jsonTest = JSON.stringify({linkUrl: newLinkUrl, slug: newLinkSlug})
+    //console.log(jsonTest)
+    addLink(newLinkUrl, newLinkSlug)
+  }
   return (
     <div>
-      <form action="/api/create-link" method="post">
+      <form onSubmit={submit}>
         <div className="row">
           <div className="col-lg-5 col-md-5 py-3">
-            <input htmlFor="linkUrl" type="url" className="form-control" id="linkUrl" name="linkUrl" placeholder="Target URL" />
+            <input ref={linkUrl} htmlFor="linkUrl" type="url" className="form-control" id="linkUrl" name="linkUrl" placeholder="Target URL" required />
           </div>
           <div className="col-lg-5 col-md py-3">
             <div className="row g-3 align-items-center">
@@ -13,7 +37,7 @@ export default function UrlForm({links}){
                 <label htmlFor="slug" className="col-form-label">http://{process.env.HOST}/</label>
               </div>
               <div className="col-auto">
-                <input htmlFor="slug" type="text" name="slug" id="slug" className="form-control w-auto" aria-describedby="slug" />
+                <input ref={linkSlug} htmlFor="slug" type="text" name="slug" id="slug" className="form-control w-auto" aria-describedby="slug" />
               </div>
             </div>
           </div>
