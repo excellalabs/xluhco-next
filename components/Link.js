@@ -33,7 +33,7 @@ export default function Link({link, onDelete = f => f}){
           </small>
         </div>
         <div className="m-2">
-            <a className="btn btn-secondary "
+            <a className="btn btn-success "
                 onClick={() => copyLinkToClipboard(link.slug)}>
             Copy
             </a>
