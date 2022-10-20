@@ -19,7 +19,7 @@ export default function Link({link, onDelete = f => f}){
       <div className="d-flex justify-content-end align-items-center">
         <div className="me-2">
           <small>
-            <a target="_blank" href={`/${link.slug}`}>
+            <a target="_blank" className="text-secondary" href={`/${link.slug}`}>
                 {`${process.env.HOST}/${link.slug}`}
             </a>
           </small>
@@ -31,7 +31,7 @@ export default function Link({link, onDelete = f => f}){
             </a>
         </div>
         <Dropdown>
-          <Dropdown.Toggle variant="link" bsPrefix="p-0" id={`dropdown_${link.slug}`}>
+          <Dropdown.Toggle variant="link" className="text-secondary" bsPrefix="p-0" id={`dropdown_${link.slug}`}>
             <BsThreeDotsVertical />
           </Dropdown.Toggle>
 
