@@ -5,7 +5,7 @@ import LinksList from '../components/LinksList'
 
 import Header from '../components/Header'
 
-function Home({linksList}) {
+export default function Home({linksList}) {
   return (
     <div>
       <Head>
@@ -33,5 +33,3 @@ export async function getServerSideProps() {
     props: { linksList }, // will be passed to the page component as props
   }
 }
-
-export default Home

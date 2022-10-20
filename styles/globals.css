@@ -1,0 +1,9 @@
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: #da3633 !important;
+  border-color: #da3633 !important;
+}
+
+.btn-success, .btn-success:hover, .btn-success:active, .btn-success:visited {
+  background-color: #2d2e71 !important;
+  border-color: #2d2e71 !important;
+}
