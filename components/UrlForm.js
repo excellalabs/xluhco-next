@@ -23,6 +23,10 @@ export default function UrlForm({links, onCreate = f => f}){
     //const jsonTest = JSON.stringify({linkUrl: newLinkUrl, slug: newLinkSlug})
     //console.log(jsonTest)
     addLink(newLinkUrl, newLinkSlug)
+    .then(()=>{
+      linkUrl.current.value = "";
+      linkSlug.current.value = "";
+    })
   }
   return (
     <div>
