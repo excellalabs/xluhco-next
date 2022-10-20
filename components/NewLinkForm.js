@@ -13,8 +13,15 @@ export default function NewLinkForm({onCreate = f => f}){
         'Content-Type': 'application/json'
       }
     })
-    flash("New Link Created",3000, "success")
-    await onCreate();
+    if (response.status === 201) {
+      flash("New Link Created",3000, "success");
+      onCreate();
+    } else if (response.status === 409){
+      flash("A link with that slug already exists",3000, "error");
+    } else {
+      flash("An error occurred",3000, "error");
+    }
+    
   }
 
   const submit = e => {

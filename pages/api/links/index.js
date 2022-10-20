@@ -8,7 +8,17 @@ export default async function handler(req, res){
         const linkUrl = req.body.linkUrl
         const slug = req.body.slug
         const newLink = await createLink(linkUrl, slug)
-        res.status(200).json({newLink})
+        if ("details" in newLink){
+            res.status(newLink.statusCode).json({newLink})
+        }else{
+            //console.log(newLink.details)
+            res.status(201).json({newLink})
+        }
+        
+        
+ 
+
+        
        
     }
 }
