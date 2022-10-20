@@ -1,9 +1,16 @@
-import {useRef} from 'react';
+import {useRef, useState} from 'react';
 import {flash} from "react-universal-flash";
 
 export default function NewLinkForm({onCreate = f => f}){
   const linkUrl = useRef();
   const linkSlug = useRef();
+
+  const [slugInput, setSlugInput] = useState('');
+
+  const handleSlugChange = e => {
+    const result = e.target.value.replace(/[^a-zA-Z0-9-_]/gi, '');
+    setSlugInput(result);
+  };
 
   const addLink = async function(newLinkUrl, newLinkSlug) {
     const response = await fetch('api/links', {
@@ -47,7 +54,7 @@ export default function NewLinkForm({onCreate = f => f}){
                 <label htmlFor="slug" className="col-form-label">{process.env.HOST}/</label>
               </div>
               <div className="col-auto">
-                <input ref={linkSlug} htmlFor="slug" type="text" name="slug" id="slug" className="form-control w-auto" aria-describedby="slug" />
+                <input ref={linkSlug} htmlFor="slug" type="text" value={slugInput} onChange={handleSlugChange} name="slug" id="slug" className="form-control w-auto" aria-describedby="slug" maxLength="16"/>
               </div>
             </div>
           </div>
