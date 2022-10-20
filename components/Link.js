@@ -1,6 +1,7 @@
 
 import { BsThreeDotsVertical } from "react-icons/bs";
 import Dropdown from 'react-bootstrap/Dropdown';
+import {flash} from "react-universal-flash";
 
 export default function Link({link, onDelete = f => f}){
 
@@ -8,7 +9,14 @@ export default function Link({link, onDelete = f => f}){
     const response = await fetch(`api/links/${linkSlug}`, {
       method: 'DELETE',
     })
+    flash(`Link ${process.env.HOST}/${linkSlug} Deleted!`,3000, "success")
     onDelete();
+  }
+
+  const copyLinkToClipboard = async function(slug) {
+    navigator.clipboard.writeText(`${process.env.HOST}/${slug}`);
+    flash(`Link ${process.env.HOST}/${slug} Copied!`,3000, "success")
+
   }
 
   return(
@@ -25,8 +33,8 @@ export default function Link({link, onDelete = f => f}){
           </small>
         </div>
         <div className="m-2">
-            <a className="btn btn-secondary "
-                onClick={() => navigator.clipboard.writeText(`${process.env.HOST}/${link.slug}`)}>
+            <a className="btn btn-success "
+                onClick={() => copyLinkToClipboard(link.slug)}>
             Copy
             </a>
         </div>

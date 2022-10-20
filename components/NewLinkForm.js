@@ -1,4 +1,5 @@
 import {useRef} from 'react';
+import {flash} from "react-universal-flash";
 
 export default function NewLinkForm({onCreate = f => f}){
   const linkUrl = useRef();
@@ -12,7 +13,7 @@ export default function NewLinkForm({onCreate = f => f}){
         'Content-Type': 'application/json'
       }
     })
-    console.log(response)
+    flash("New Link Created",3000, "success")
     await onCreate();
   }
 
