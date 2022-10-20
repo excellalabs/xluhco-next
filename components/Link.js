@@ -1,27 +1,46 @@
 
-export default function Link({link}){
-return(
-  <div className="list-group-item">
-    <div className="py-3 w-100 justify-content-between">
-      <div className="row">
-      <div className="col-md-5 col-sm-12 text-center text-md-start my-2">
-        <h5 className="mb-1">{link.url}</h5>
+import { BsThreeDotsVertical } from "react-icons/bs";
+import Dropdown from 'react-bootstrap/Dropdown';
+
+export default function Link({link, onDelete = f => f}){
+
+  const deleteLink = async function(linkSlug) {
+    const response = await fetch(`api/links/${linkSlug}`, {
+      method: 'DELETE',
+    })
+    onDelete();
+  }
+
+  return(
+    <div className="d-flex justify-content-between align-items-center p-2">
+      <div className="d-flex justify-content-start align-items-center">
+        <h5 className="m-0">{link.url}</h5>
       </div>
-      <div className="col-md-5 col-sm-12 text-center text-md-end my-2">
-        <small>
-          <a className="card-subtitle mb-2 text-muted py-2" target="_blank" href={`/${link.slug}`}>
-              {`${process.env.HOST}/${link.slug}`}
-          </a>
-        </small>
-      </div>
-      <div className="col-md-2 col-sm-12 text-center d-grid my-2">
-        <a className="btn btn-secondary float-end"
-            onClick={() => navigator.clipboard.writeText(`${process.env.HOST}/${link.slug}`)}>
-        Copy
-        </a>
-      </div>
+      <div className="d-flex justify-content-end align-items-center">
+        <div className="me-2">
+          <small>
+            <a target="_blank" href={`/${link.slug}`}>
+                {`${process.env.HOST}/${link.slug}`}
+            </a>
+          </small>
+        </div>
+        <div className="m-2">
+            <a className="btn btn-secondary "
+                onClick={() => navigator.clipboard.writeText(`${process.env.HOST}/${link.slug}`)}>
+            Copy
+            </a>
+        </div>
+        <Dropdown>
+          <Dropdown.Toggle variant="link" bsPrefix="p-0" id={`dropdown_${link.slug}`}>
+            <BsThreeDotsVertical />
+          </Dropdown.Toggle>
+
+          <Dropdown.Menu>
+            <Dropdown.Item href="#/action-1">Edit</Dropdown.Item>
+            <Dropdown.Item onClick={() => deleteLink(link.slug)}>Delete</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
       </div>
     </div>
-  </div>
-)
+  )
 }

@@ -1,6 +1,6 @@
 import {useRef} from 'react';
 
-export default function UrlForm({links, onCreate = f => f}){
+export default function EditLinkForm({link, onCreate = f => f}){
   const linkUrl = useRef();
   const linkSlug = useRef();
 
@@ -20,8 +20,6 @@ export default function UrlForm({links, onCreate = f => f}){
     e.preventDefault();
     const newLinkUrl = linkUrl.current.value;
     const newLinkSlug = linkSlug.current.value;
-    //const jsonTest = JSON.stringify({linkUrl: newLinkUrl, slug: newLinkSlug})
-    //console.log(jsonTest)
     addLink(newLinkUrl, newLinkSlug)
     .then(()=>{
       linkUrl.current.value = "";
@@ -38,7 +36,7 @@ export default function UrlForm({links, onCreate = f => f}){
           <div className="col-lg-5 col-md py-3">
             <div className="row g-3 align-items-center">
               <div className="col-auto">
-                <label htmlFor="slug" className="col-form-label">http://{process.env.HOST}/</label>
+                <label htmlFor="slug" className="col-form-label">{process.env.HOST}/</label>
               </div>
               <div className="col-auto">
                 <input ref={linkSlug} htmlFor="slug" type="text" name="slug" id="slug" className="form-control w-auto" aria-describedby="slug" />
