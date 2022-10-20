@@ -1,10 +1,9 @@
-import Head from 'next/head';
-import { env } from 'process';
-import { getLinks, initTable } from '../lib/db';
-import LinksList from '../components/LinksList';
-import UrlForm from '../components/UrlForm';
-import Header from '../components/Header';
-import { useState } from 'react';
+import Head from 'next/head'
+import { env } from 'process'
+import { getLinks, initTable } from '../lib/db'
+import LinksList from '../components/LinksList'
+
+import Header from '../components/Header'
 
 export default function Home({linksList}) {
   return (
@@ -19,15 +18,15 @@ export default function Home({linksList}) {
 
         <main className="row py-5">
           <Header />
-          <UrlForm />
-          <LinksList links={linksList}/>
+
+          <LinksList initialLinks={linksList}/>
         </main>
       </div>
     </div>
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   await initTable();
   const linksList = await getLinks();
   return {
