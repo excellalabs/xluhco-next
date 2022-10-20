@@ -11,7 +11,6 @@ export default async function handler(req, res){
         if ("details" in newLink){
             res.status(newLink.statusCode).json({newLink})
         }else{
-            //console.log(newLink.details)
             res.status(201).json({newLink})
         }
         
