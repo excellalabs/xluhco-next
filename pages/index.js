@@ -5,6 +5,7 @@ import LinksList from '../components/LinksList'
 
 import Header from '../components/Header'
 import {Flasher} from "react-universal-flash";
+import { SSRProvider } from 'react-bootstrap'
 
 export default function Home({linksList}) {
   return (
@@ -19,9 +20,11 @@ export default function Home({linksList}) {
       <div className="container">
 
         <main className="row py-5">
-          <Header />
+          <SSRProvider>
 
-          <LinksList initialLinks={linksList}/>
+            <Header />
+            <LinksList initialLinks={linksList}/>
+          </SSRProvider>
         </main>
       </div>
     </div>
