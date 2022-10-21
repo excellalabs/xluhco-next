@@ -45,7 +45,7 @@ export default function Link({link, onDelete = f => f}){
 
           <Dropdown.Menu>
             <Dropdown.Item href="#/action-1">Edit</Dropdown.Item>
-            <Dropdown.Item onClick={() => deleteLink(link.slug)}>Delete</Dropdown.Item>
+            <Dropdown.Item onClick={() => { window.confirm( 'Are you sure you want to delete this link?', ) && deleteLink(link.slug)}}>Delete</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
       </div>
