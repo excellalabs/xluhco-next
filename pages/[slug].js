@@ -5,18 +5,18 @@ export async function getServerSideProps({params}) {
   const urlSlug = params.slug
   const link = await getLink(urlSlug);
 
-  if (link) {
+  if ("details" in link) {
     return {
-      redirect: {
-        destination: link.linkUrl,
-        permanent: false,
-      },
-    };
+      notFound: true,
+    }
+  }else{
+      return {
+        redirect: {
+          destination: link.linkUrl,
+          permanent: false,
+        },
+      };
   }
-
-  return {
-    props: {},
-  };
 }
 
 function SlugPage(){
