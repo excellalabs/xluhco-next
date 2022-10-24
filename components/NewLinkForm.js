@@ -50,11 +50,11 @@ export default function NewLinkForm({onCreate = f => f}){
           </div>
           <div className="col-lg-5 col-md py-3">
             <div className="row g-3 align-items-center">
-              <div className="col-auto">
+              <div className="col-4">
                 <label htmlFor="slug" className="col-form-label">{process.env.HOST}/</label>
               </div>
-              <div className="col-auto">
-                <input ref={linkSlug} htmlFor="slug" type="text" value={slugInput} onChange={handleSlugChange} name="slug" id="slug" className="form-control w-auto" aria-describedby="slug" maxLength="16"/>
+              <div className="col">
+                <input ref={linkSlug} htmlFor="slug" type="text" value={slugInput} onChange={handleSlugChange} name="slug" id="slug" className="form-control" aria-describedby="slug" maxLength="16"/>
               </div>
             </div>
           </div>
