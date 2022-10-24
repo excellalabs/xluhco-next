@@ -8,23 +8,22 @@ export default function Link({link, onDelete = f => f}){
   const deleteLink = async function(linkSlug) {
     const response = await fetch(`api/links/${linkSlug}`, {
       method: 'DELETE',
-    })
-    flash(`Link ${process.env.HOST}/${linkSlug} Deleted!`,3000, "success")
+    });
+    flash(`Link ${process.env.HOST}/${linkSlug} Deleted!`,3000, "success");
     onDelete();
   }
 
   const copyLinkToClipboard = async function(slug) {
     navigator.clipboard.writeText(`${process.env.HOST}/${slug}`);
-    flash(`Link ${process.env.HOST}/${slug} Copied!`,3000, "success")
-
+    flash(`Link ${process.env.HOST}/${slug} Copied!`,3000, "success");
   }
 
   return(
     <div className="row">
-      <div className="col-12 d-flex justify-content-center py-2 justify-content-sm-start col-sm-8 text-break">
+      <div className="col-12 d-flex justify-content-center py-2 justify-content-md-start col-md-8 text-break">
         <h5>{link.url}</h5>
       </div>
-      <div className="col-12 d-flex justify-content-center py-2 col-sm-4 justify-content-sm-end">
+      <div className="col-12 d-flex justify-content-center py-2 col-md-4 justify-content-md-end text-break">
         <a target="_blank" className="text-secondary mx-3" href={`/${link.slug}`}>
             {`${process.env.HOST}/${link.slug}`}
         </a>
