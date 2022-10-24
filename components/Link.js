@@ -20,31 +20,27 @@ export default function Link({link, onDelete = f => f}){
   }
 
   return(
-    <div className="d-flex justify-content-between align-items-center p-2">
-      <div className="d-flex justify-content-start align-items-center">
+    <div className="row p-2">
+      <div className="col py-2">
         <h5 className="m-0">{link.url}</h5>
       </div>
-      <div className="d-flex justify-content-end align-items-center">
-        <div className="me-2">
-          <small>
-            <a target="_blank" className="text-secondary" href={`/${link.slug}`}>
-                {`${process.env.HOST}/${link.slug}`}
-            </a>
-          </small>
-        </div>
-        <div className="m-2">
-            <a className="btn btn-success "
-                onClick={() => copyLinkToClipboard(link.slug)}>
-            Copy
-            </a>
-        </div>
+      <div className="col d-flex justify-content-end py-2">
+        <a target="_blank" className="text-secondary" href={`/${link.slug}`}>
+            {`${process.env.HOST}/${link.slug}`}
+        </a>
+      </div>
+      <div className="col d-flex justify-content-end py-2">
+        <a className="btn btn-success "
+            onClick={() => copyLinkToClipboard(link.slug)}>
+          Copy
+        </a>
         <Dropdown>
           <Dropdown.Toggle variant="link" className="text-secondary" bsPrefix="p-0" id={`dropdown_${link.slug}`}>
             <BsThreeDotsVertical />
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">Edit</Dropdown.Item>
+            {/* <Dropdown.Item href="#/action-1">Edit</Dropdown.Item> */}
             <Dropdown.Item onClick={() => { window.confirm( 'Are you sure you want to delete this link?', ) && deleteLink(link.slug)}}>Delete</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
