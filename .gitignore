@@ -113,6 +113,10 @@ next-env.d.ts
 # Local Environment Variables (See .env.local.sample)
 .env.local
 
+# This came from playwright
+.history
+package-lock.json
+
 .DS_Store
 
 __azurite_db_table__.json
@@ -120,3 +124,5 @@ __azurite_db_blob_extent__.json
 __azurite_db_blob__.json
 
 .vscode
+# Don't load Rubymine env files
+.idea
