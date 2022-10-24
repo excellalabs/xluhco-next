@@ -11,10 +11,6 @@ export default function Header({links}){
           src={excellaLogo}
           width={150}
           height={50}
-          style={{
-            maxWidth: '100%',
-            height: 'auto',
-          }}
         />
       </div>
       <div className="text-center py-2">
